@@ -1,3 +1,4 @@
+bat
 bluetui
 brightnessctl
 btop
@@ -33,5 +34,6 @@ wavemon
 wget
 wireplumber
 xdg-desktop-portal-hyprland
+yay
 yay
 zip
