@@ -1,7 +1,6 @@
 com.github.tchx84.Flatseal
 com.heroicgameslauncher.hgl
 com.prusa3d.PrusaSlicer
-com.vscodium.codium
 dev.vencord.Vesktop
 io.gitlab.librewolf-community
 md.obsidian.Obsidian
@@ -9,5 +8,4 @@ net.ankiweb.Anki
 org.filezillaproject.Filezilla
 org.gnome.gitlab.YaLTeR.VideoTrimmer
 org.localsend.localsend_app
-com.super_productivity.SuperProductivity
 org.openrgb.OpenRGB
