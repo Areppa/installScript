@@ -17,6 +17,7 @@ nvim
 nvtop
 pavucontrol
 pipewire
+poetry
 power-profiles-daemon
 python
 python-pip
