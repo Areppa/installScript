@@ -67,7 +67,7 @@ install_flatpak_apps() {
     # Ensure remote exists
     if ! flatpak remote-list | grep -q "^${FLATPAK_REMOTE}\$"; then
         echo "Adding Flatpak remote '${FLATPAK_REMOTE}'..."
-        flatpak remote-add --if-not-exists "${FLATPAK_REMOTE}" "flathub.org/repo/flathub.flatpakrepo"
+        flatpak remote-add --if-not-exists "${FLATPAK_REMOTE}" "https://flathub.org/repo/flathub.flatpakrepo"
     fi
     for app in "${apps[@]}"; do
         if flatpak info "${app}" > /dev/null 2>&1; then
