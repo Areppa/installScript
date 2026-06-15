@@ -7,3 +7,6 @@ wofi
 waybar
 swaync
 kitty
+wl-clipboard
+wl-clip-persist
+cliphist
