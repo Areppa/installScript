@@ -139,4 +139,8 @@ if (( ${#flatpak_apps_uniq[@]} )); then
     install_flatpak_apps "${flatpak_apps_uniq[@]}"
 fi
 
+# Debloating Brave
+echo -e "\n--------- Debloating Brave. ---------"
+./software_config/brave-debloat.sh
+
 echo -e "\n--------- All tasks completed. ---------"
