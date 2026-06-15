@@ -21,6 +21,7 @@ sudo mkdir -p /etc/brave/policies/managed/
 # Copy the file into the managed directory
 echo "Installing policies.json..."
 sudo cp "$TMP_FILE" /etc/brave/policies/managed/policies.json
+sudo chmod 0644 /etc/brave/policies/managed/policies.json
 
 # Clean up the temporary file
 rm -f "$TMP_FILE"
