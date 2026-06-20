@@ -141,7 +141,7 @@ fi
 
 # Run docker install script
 echo -e "\n--------- Installing docker. ---------"
-./software_config/docker.sh
+sudo -u "$NONROOT_USER" bash ./software_config/docker.sh
 
 # Debloating Brave
 echo -e "\n--------- Debloating Brave. ---------"
