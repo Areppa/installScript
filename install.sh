@@ -139,6 +139,10 @@ if (( ${#flatpak_apps_uniq[@]} )); then
     install_flatpak_apps "${flatpak_apps_uniq[@]}"
 fi
 
+# Run docker install script
+echo -e "\n--------- Installing docker. ---------"
+./software_config/docker.sh
+
 # Debloating Brave
 echo -e "\n--------- Debloating Brave. ---------"
 ./software_config/brave-debloat.sh
