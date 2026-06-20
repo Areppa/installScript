@@ -10,6 +10,7 @@ eza
 flatpak
 fzf
 git
+go
 grim
 ncdu
 nmap
@@ -22,6 +23,7 @@ power-profiles-daemon
 python
 python-pip
 rsync
+rust
 s-tui
 slurp
 smbclient
