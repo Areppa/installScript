@@ -12,10 +12,12 @@ fzf
 git
 go
 grim
+lf
 ncdu
 nmap
 nvim
 nvtop
+paru
 pavucontrol
 pipewire
 poetry
@@ -37,6 +39,4 @@ wavemon
 wget
 wireplumber
 xdg-desktop-portal-hyprland
-yay
-yay
 zip
