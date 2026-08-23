@@ -11,11 +11,11 @@ SOFTWARE_DIR="software"
 AUR_DIR="aur"
 FLATPAK_REMOTE="flathub"
 
-# Determine original non-root user to run yay as
+# Determine original non-root user to run paru as
 NONROOT_USER="${SUDO_USER:-$(logname 2>/dev/null || '')}"
 # If NONROOT_USER is empty or root, abort with actionable message
 if [[ -z "$NONROOT_USER" || "$NONROOT_USER" == "root" ]]; then
-    echo "Error: cannot determine a non-root user to run 'yay'."
+    echo "Error: cannot determine a non-root user to run 'paru'."
     echo "Please invoke this script from a normal user account (so sudo sets SUDO_USER),"
     echo "or set up and run the AUR step manually as a non-root user."
     exit 1
@@ -38,12 +38,12 @@ install_pacman_pkgs() {
     fi
 }
 
-# Helper: install AUR packages with yay only if missing — run yay as the original non-root user
+# Helper: install AUR packages with paru only if missing — run paru as the original non-root user
 install_aur_pkgs() {
     local pkgs=("$@")
-    # Verify yay exists for the non-root user
-    if ! sudo -u "$NONROOT_USER" -H bash -lc 'command -v yay >/dev/null 2>&1'; then
-        echo "Error: 'yay' not found for user $NONROOT_USER. Please install an AUR helper (e.g. yay) as that user."
+    # Verify paru exists for the non-root user
+    if ! sudo -u "$NONROOT_USER" -H bash -lc 'command -v paru >/dev/null 2>&1'; then
+        echo "Error: 'paru' not found for user $NONROOT_USER. Please install an AUR helper (e.g. paru) as that user."
         exit 1
     fi
     local to_install=()
@@ -55,9 +55,9 @@ install_aur_pkgs() {
         fi
     done
     if (( ${#to_install[@]} )); then
-        echo "Installing (AUR via yay as $NONROOT_USER): ${to_install[*]}"
-        # Run yay as the non-root user; --noconfirm and --needed for unattended install
-        sudo -u "$NONROOT_USER" -H bash -lc "yay -S --noconfirm --needed ${to_install[*]}"
+        echo "Installing (AUR via paru as $NONROOT_USER): ${to_install[*]}"
+        # Run paru as the non-root user; --noconfirm and --needed for unattended install
+        sudo -u "$NONROOT_USER" -H bash -lc "paru -S --noconfirm --needed ${to_install[*]}"
     fi
 }
 
@@ -81,7 +81,7 @@ install_flatpak_apps() {
 
 # Read software lists from files under software/*
 # Files named exactly "flatpak" -> flatpak apps (one per line)
-# Files named exactly "aur"     -> AUR packages (one per line, installed via yay as non-root)
+# Files named exactly "aur"     -> AUR packages (one per line, installed via paru as non-root)
 # All other files -> pacman packages (one per line)
 pacman_pkgs=()
 aur_pkgs=()
@@ -127,9 +127,9 @@ if (( ${#pacman_pkgs_uniq[@]} )); then
     install_pacman_pkgs "${pacman_pkgs_uniq[@]}"
 fi
 
-# Install AUR packages via yay (as non-root user)
+# Install AUR packages via paru (as non-root user)
 if (( ${#aur_pkgs_uniq[@]} )); then
-    echo -e "\n--------- Installing AUR pkgs via yay (non-root). ---------"
+    echo -e "\n--------- Installing AUR pkgs via paru (non-root). ---------"
     install_aur_pkgs "${aur_pkgs_uniq[@]}"
 fi
 
