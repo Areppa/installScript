@@ -7,9 +7,21 @@ if [[ $EUID -ne 0 ]]; then
     exec sudo "$0" "$@"
 fi
 
+# Set variables here:
+REPO_URL="https://github.com/areppa/dotfiles"
+DOTFILES_DIR="${HOME}/dotfiles"
 SOFTWARE_DIR="software"
 AUR_DIR="aur"
 FLATPAK_REMOTE="flathub"
+
+# Get dotfiles
+if [[ -d "$DOTFILES_DIR/.git" ]]; then
+    echo "Updating existing dotfiles repository..."
+    git -C "$DOTFILES_DIR" pull
+else
+    echo "Cloning dotfiles repository..."
+    git clone "$REPO_URL" "$DOTFILES_DIR"
+fi
 
 # Determine original non-root user to run paru as
 NONROOT_USER="${SUDO_USER:-$(logname 2>/dev/null || '')}"
