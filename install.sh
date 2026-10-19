@@ -157,6 +157,14 @@ if (( ${#flatpak_apps_uniq[@]} )); then
     install_flatpak_apps "${flatpak_apps_uniq[@]}"
 fi
 
+echo -e "\n--------- Setting Up Memory ---------"
+if [[ -f "$SCRIPT_DIR/software_config/setup-memory.sh" ]]; then
+    sudo -n bash "$SCRIPT_DIR/software_config/setup-memory.sh"
+else
+    echo "Memory setup script not found; skipping."
+fi
+
+
 echo -e "\n--------- Installing Docker ---------"
 if [[ -f "$SCRIPT_DIR/software_config/docker.sh" ]]; then
     bash "$SCRIPT_DIR/software_config/docker.sh"
