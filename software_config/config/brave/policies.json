@@ -15,5 +15,11 @@
   "PasswordManagerEnabled": false,
   "AutofillAddressEnabled": false,
   "AutofillCreditCardEnabled": false,
-  "TranslateEnabled": false
+  "TranslateEnabled": false,
+  "ExtensionInstallForcelist": [
+    "khncfooichmfjbepaaaebmommgaepoid;https://clients2.google.com/service/update2/crx",
+    "mnjggcdmjocbbbhaepdhchncahnbgone;https://clients2.google.com/service/update2/crx",
+    "edibdbjcniadpccecjdfdjjppcpchdlm;https://clients2.google.com/service/update2/crx",
+    "enamippconapkdmgfgjchkhakpfinmaj;https://clients2.google.com/service/update2/crx"
+  ]
 }
