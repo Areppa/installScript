@@ -21,5 +21,8 @@
     "mnjggcdmjocbbbhaepdhchncahnbgone;https://clients2.google.com/service/update2/crx",
     "edibdbjcniadpccecjdfdjjppcpchdlm;https://clients2.google.com/service/update2/crx",
     "enamippconapkdmgfgjchkhakpfinmaj;https://clients2.google.com/service/update2/crx"
+  ],
+  "URLBlocklist": [
+    "chrome-extension://khncfooichmfjbepaaaebmommgaepoid/popup.html"
   ]
 }
