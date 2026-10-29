@@ -179,4 +179,11 @@ else
     echo "Brave debloat script not found; skipping."
 fi
 
+echo -e "\n--------- Installing Spotify & Spicetify ---------"
+if [[ -f "$SCRIPT_DIR/software_config/spotify.sh" ]]; then
+    bash "$SCRIPT_DIR/software_config/spotify.sh"
+else
+    echo "Spotify install script not found; skipping."
+fi
+
 echo -e "\n--------- All tasks completed ---------"
