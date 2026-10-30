@@ -9,19 +9,31 @@
   "BraveWebDiscoveryEnabled": false,
   "BraveNewsDisabled": true,
   "BraveTalkDisabled": true,
-  "BraveWaybackMachineEnabled": false,
+  "BraveWaybackMachineEnabled": true,
   "BravePlaylistEnabled": false,
   "SyncDisabled": false,
   "PasswordManagerEnabled": false,
   "AutofillAddressEnabled": false,
   "AutofillCreditCardEnabled": false,
   "TranslateEnabled": false,
-  "ExtensionInstallForcelist": [
-    "khncfooichmfjbepaaaebmommgaepoid;https://clients2.google.com/service/update2/crx",
-    "mnjggcdmjocbbbhaepdhchncahnbgone;https://clients2.google.com/service/update2/crx",
-    "edibdbjcniadpccecjdfdjjppcpchdlm;https://clients2.google.com/service/update2/crx",
-    "enamippconapkdmgfgjchkhakpfinmaj;https://clients2.google.com/service/update2/crx"
-  ],
+  "ExtensionSettings": {
+    "khncfooichmfjbepaaaebmommgaepoid": {
+      "installation_mode": "normal_installed",
+      "update_url": "https://clients2.google.com/service/update2/crx"
+    },
+    "mnjggcdmjocbbbhaepdhchncahnbgone": {
+      "installation_mode": "normal_installed",
+      "update_url": "https://clients2.google.com/service/update2/crx"
+    },
+    "edibdbjcniadpccecjdfdjjppcpchdlm": {
+      "installation_mode": "normal_installed",
+      "update_url": "https://clients2.google.com/service/update2/crx"
+    },
+    "enamippconapkdmgfgjchkhakpfinmaj": {
+      "installation_mode": "normal_installed",
+      "update_url": "https://clients2.google.com/service/update2/crx"
+    }
+  },
   "URLBlocklist": [
     "chrome-extension://khncfooichmfjbepaaaebmommgaepoid/popup.html"
   ]
