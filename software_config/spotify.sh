@@ -128,6 +128,6 @@ fi
 echo "Configuring and applying Spicetify..."
 spicetify config spotify_path "$SPOTIFY_PATH"
 spicetify config prefs_path "$PREFS_PATH"
-spicetify backup apply
+spicetify apply
 
 echo "Done. Start Spotify normally."
